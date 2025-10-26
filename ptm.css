@@ -1,118 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+@import "./fonts/fonts.css";
+
 :root {
-  --ptm-font-sans: "Noto Sans Myanmar", "Inter", sans-serif;
+  --ptm-font-sans: "Noto Sans Myanmar", "Poppins", sans-serif;
   --ptm-font-mono: "Ubuntu Mono", monospace;
+  --ptm-font-tabler: "tabler-icons" !important;
   --transition: all 0.3s ease;
 }
+
 :root {
-  /* Black and White */
-  --bw-100: #ffffff;
-  --bw-95: #fefefe;
-  --bw-90: #fdfdfd;
-  --bw-85: #fcfcfc;
-  --bw-80: #fbfbfb;
-  --bw-75: #fafafa;
-  --bw-70: #f0f0f0;
-  --bw-65: #f1f1f1;
-  --bw-60: #f2f2f2;
-  --bw-55: #f3f3f3;
-  --bw-50: #999999;
-  --bw-45: #888888;
-  --bw-40: #777777;
-  --bw-35: #666666;
-  --bw-30: #555555;
-  --bw-25: #444444;
-  --bw-20: #333333;
-  --bw-15: #323232;
-  --bw-10: #222222;
-  --bw-5: #111111;
-  --bw-0: #000000;
-  /* Red */
-  --r-ff: #ff0000;
-  --r-ee: #ee0000;
-  --r-dd: #dd0000;
-  --r-cc: #cc0000;
-  --r-bb: #bb0000;
-  --r-aa: #aa0000;
-  --r-99: #990000;
-  --r-88: #880000;
-  --r-77: #770000;
-  --r-66: #660000;
-  --r-55: #550000;
-  --r-44: #440000;
-  --r-33: #330000;
-  --r-22: #220000;
-  --r-11: #110000;
-  /* Green */
-  --g-ff: #00ff00;
-  --g-ee: #00ee00;
-  --g-dd: #00dd00;
-  --g-cc: #00cc00;
-  --g-bb: #00bb00;
-  --g-aa: #00aa00;
-  --g-99: #009900;
-  --g-88: #008800;
-  --g-77: #007700;
-  --g-66: #006600;
-  --g-55: #005500;
-  --g-44: #004400;
-  --g-33: #003300;
-  --g-22: #002200;
-  --g-11: #001100;
-  /* Blue */
-  --b-ff: #0000ff;
-  --b-ee: #0000ee;
-  --b-dd: #0000dd;
-  --b-cc: #0000cc;
-  --b-bb: #0000bb;
-  --b-aa: #0000aa;
-  --b-99: #000099;
-  --b-88: #000088;
-  --b-77: #000077;
-  --b-66: #000066;
-  --b-55: #000055;
-  --b-44: #000044;
-  --b-33: #000033;
-  --b-22: #000022;
-  --b-11: #000011;
-  /* Y */
-  --y-ff: #ffff00;
-  --y-ee: #eeee00;
-  --y-dd: #dddd00;
-  --y-cc: #cccc00;
-  --y-bb: #bbbb00;
-  --y-aa: #aaaa00;
-  --y-99: #999900;
-  --y-88: #888800;
-  --y-77: #777700;
-  --y-66: #666600;
-  --y-55: #555500;
-  --y-44: #444400;
-  --y-33: #333300;
-  --y-22: #222200;
-  --y-11: #111100;
-  /* M */
-  --m-ff: #ff0099;
-  --m-ee: #ee0088;
-  --m-dd: #dd0077;
-  --m-cc: #cc0066;
-  --m-bb: #bb0055;
-  --m-aa: #aa0044;
-  --m-99: #990033;
-  --m-88: #880022;
-  --m-77: #770011;
-  --m-66: #660015;
-  --m-55: #550026;
-  --m-44: #440011;
-  --m-33: #330011;
-  --m-22: #220011;
-  --m-11: #110011;
+  --ptm-color-bg: #ffffff;
+  --ptm-color-bg-2: #f9f9f9;
+  --ptm-color-text: #444444;
+  --ptm-color-text-2: #666666;
+  --ptm-color-border: #cccccc;
+  --ptm-color-anchor-hover: #ce3500;
+  --ptm-color-anchor: #0050ef;
+  --ptm-color-green: #008a00;
 }
-
-
+.dark,
+*[data-theme="dark"] {
+  --ptm-color-bg: #0d0d0d;
+  --ptm-color-bg-2: #1a1a1a;
+  --ptm-color-text: #d9d9d9;
+  --ptm-color-text-2: #cccccc;
+  --ptm-color-border: #1a1a1a;
+  --ptm-color-anchor-hover: #ff9800;
+  --ptm-color-anchor: #278de0;
+  --ptm-color-green: #4caf50;
+}
+.dark,
+*[data-theme="dark"] {
+  color-scheme: "dark";
+}
+/* ======================================= */
 * {
   margin: 0;
   padding: 0;
@@ -121,17 +41,131 @@ html {
   overflow-x: hidden;
   word-break: break-word;
   overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 body {
   font-family: var(--ptm-font-sans);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
   font-size: 16px;
   line-height: 1.5;
   background-color: var(--ptm-color-bg);
   color: var(--ptm-color-text);
 }
-
+/* Header Nav */
+header {
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--ptm-color-bg-2);
+  top: 0;
+  z-index: 100;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header nav a.logo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  color: var(--ptm-color-text-2);
+  text-decoration: none;
+  font-size: 27px;
+  background: transparent;
+}
+header a.logo:hover {
+  color: var(--ptm-color-anchor-hover);
+}
+header nav div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header nav div a {
+  text-decoration: none;
+  font-family: "Concert One", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  color: var(--ptm-color-text-2);
+  position: relative;
+}
+header nav div a:not(:first-child) {
+  margin-left: 18px;
+}
+header nav div a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--ptm-color-anchor-hover);
+  transition: var(--transition);
+}
+header nav div a:hover::after {
+  width: 100%;
+}
+/* Header Nav End */
+/* Main */
+main {
+  max-width: 1200px;
+  margin: 27px auto;
+  padding: 0 20px;
+}
+/* Heading */
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 18px;
+}
+h6 {
+  font-size: 17px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  margin: 10px 0;
+}
+/* Anchor */
+a {
+  color: var(--ptm-color-anchor);
+  font-size: inherit;
+  font-weight: inherit;
+}
+/* apply hover to all anchors, but keep header links' hover unchanged */
+a:hover {
+  color: var(--ptm-color-anchor-hover);
+}
+header a:hover {
+  color: var(--ptm-color-text-2);
+}
+a[href^="#"] {
+  text-decoration: none;
+}
 /* Scopes */
-@scope (.top-btn) {
+@scope (.topBtn) {
   :scope {
     all: unset;
     font-size: 1.5rem;
@@ -144,50 +178,21 @@ body {
     transition: 0.3s;
     background-color: inherit !important;
   }
+  :scope:before {
+    font-family: var(--ptm-font-tabler);
+    line-height: 1;
+    content: "\f63c";
+  }
+  :scope:hover {
+    color: var(--ptm-color-anchor-hover);
+    cursor: pointer;
+  }
 }
-@scope (.top-container) {
-  :scope {
-    width: 100%;
-    padding: 10px;
-    border-bottom: 1px solid var(--ptm-color-border);
-    background-color: var(--ptm-color-bg-2);
-    overflow: hidden;
-    position: relative;
-  }
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  header a.logo {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 700;
-    color: var(--ptm-color-text-2);
-    text-decoration: none;
-    font-size: 27px;
-    background: transparent;
-  }
-  header a.logo:hover {
-    color: var(--ptm-color-anchor-hover);
-  }
+
+/* @media */
+@media screen and (max-width: 640px) {
   header nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  header nav a {
-    text-decoration: none;
-    font-family: "Concert One", sans-serif;
-    font-optical-sizing: auto;
-    font-size: 16px;
-  }
-  header nav a:not(:first-child) {
-    margin-left: 18px;
-  }
-  header nav a:hover {
-    color: var(--ptm-color-anchor-hover);
+    flex-direction: column;
+    justify-content: center;
   }
 }
