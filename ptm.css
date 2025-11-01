@@ -3,36 +3,75 @@
 :root {
   --ptm-font-sans: "Noto Sans Myanmar", "Poppins", sans-serif;
   --ptm-font-mono: "Ubuntu Mono", monospace;
+  --ptm-font-orb: "Orbitron", sans-serif;
+  --ptm-font-one: "Concert One", sans-serif;
   --ptm-font-tabler: "tabler-icons" !important;
   --transition: all 0.3s ease;
 }
 
 :root {
   --ptm-color-bg: #ffffff;
-  --ptm-color-bg-2: #f9f9f9;
+  --ptm-color-bg-2: #f6f8fa;
+  --ptm-color-bg-3: #e5e7eb;
   --ptm-color-text: #444444;
   --ptm-color-text-2: #666666;
   --ptm-color-border: #cccccc;
   --ptm-color-anchor-hover: #ce3500;
   --ptm-color-anchor: #0050ef;
   --ptm-color-green: #008a00;
+  --ptm-color-code: #cc0000;
 }
 .dark,
 *[data-theme="dark"] {
   --ptm-color-bg: #0d0d0d;
   --ptm-color-bg-2: #1a1a1a;
+  --ptm-color-bg-3: #222222;
   --ptm-color-text: #d9d9d9;
   --ptm-color-text-2: #cccccc;
   --ptm-color-border: #1a1a1a;
   --ptm-color-anchor-hover: #ff9800;
   --ptm-color-anchor: #278de0;
   --ptm-color-green: #4caf50;
+  --ptm-color-code: #ee0000;
 }
 .dark,
 *[data-theme="dark"] {
   color-scheme: "dark";
 }
-/* ======================================= */
+/* ============================================================================================================= */
+address,
+area,
+article,
+aside,
+audio,
+blockquote,
+datalist,
+details,
+dl,
+fieldset,
+figure,
+form,
+input,
+iframe,
+img,
+meter,
+nav,
+ol,
+optgroup,
+option,
+output,
+p,
+pre,
+progress,
+ruby,
+section,
+table,
+textarea,
+ul,
+video {
+  margin-bottom: 1rem;
+}
+/* ============================================================================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -55,7 +94,7 @@ body {
   background-color: var(--ptm-color-bg);
   color: var(--ptm-color-text);
 }
-/* Header Nav */
+/* ------------------------------ Header Nav ------------------------------ */
 header {
   width: 100%;
   padding: 10px;
@@ -74,7 +113,7 @@ header nav {
   margin: 0 auto;
 }
 header nav a.logo {
-  font-family: "Orbitron", sans-serif;
+  font-family: var(--ptm-font-orb);
   font-weight: 700;
   color: var(--ptm-color-text-2);
   text-decoration: none;
@@ -91,7 +130,7 @@ header nav div {
 }
 header nav div a {
   text-decoration: none;
-  font-family: "Concert One", sans-serif;
+  font-family: var(--ptm-font-one);
   font-optical-sizing: auto;
   font-size: 16px;
   color: var(--ptm-color-text-2);
@@ -114,41 +153,83 @@ header nav div a:hover::after {
   width: 100%;
 }
 /* Header Nav End */
-/* Main */
+/*------------------------------------------------------------------------- Main -------------------------------*/
 main {
   max-width: 1200px;
   margin: 27px auto;
   padding: 0 20px;
+  transition: margin-left 0.4s;
 }
-/* Heading */
-h1 {
-  font-size: 36px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 20px;
-}
-h5 {
-  font-size: 18px;
-}
-h6 {
-  font-size: 17px;
-}
+/*--------------------------------------------------------------------- Heading ------------------------------- */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
-  margin: 10px 0;
+  line-height: 1;
+  color: var(--ptm-color-text);
+  padding-top: 0.875rem;
 }
-/* Anchor */
+h1,
+h2,
+h3 {
+  color: var(--ptm-color-text);
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--ptm-color-bg-2);
+}
+h4,
+h5,
+h6 {
+  margin-bottom: 0.3rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.85rem;
+}
+
+h3 {
+  font-size: 1.55rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+/* -------------------------------------------- blockquote -------------------- */
+abbr:hover {
+  /* Set the '?' cursor while hovering an abbreviation */
+  cursor: help;
+}
+
+blockquote {
+  padding: 1.5rem;
+  background: var(--ptm-color-bg-2);
+  border-left: 5px solid var(--ptm-color-bg-3);
+}
+
+abbr {
+  cursor: help;
+}
+
+blockquote *:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+/* ------------------------------------------------------- Anchor ---------------------------------- */
 a {
   color: var(--ptm-color-anchor);
   font-size: inherit;
@@ -164,7 +245,154 @@ header a:hover {
 a[href^="#"] {
   text-decoration: none;
 }
-/* Scopes */
+a img {
+  margin-bottom: 0px;
+}
+/* ---------------------------------------------------------------- Pre Code -------------------- */
+code,
+pre,
+kbd,
+samp {
+  /* Set the font family for monospaced elements */
+  font-family: var(--ptm-font-mono);
+}
+
+code,
+samp,
+kbd,
+pre {
+  /* The main preformatted style. This is changed slightly across different cases. */
+  background: var(--ptm-color-bg-2);
+  border: 1px solid var(--ptm-color-border);
+  border-radius: 4px;
+  padding: 3px 6px;
+  /* ↓ font-size is relative to containing element, so it scales for titles*/
+  font-size: 0.9em;
+}
+code {
+  color: var(--ptm-color-code);
+}
+kbd {
+  /* Makes the kbd element look like a keyboard key */
+  border-bottom: 3px solid var(--ptm-color-border);
+}
+
+pre {
+  padding: 1rem 1.4rem;
+  max-width: 100%;
+  overflow: auto;
+}
+pre code {
+  /* When <code> is in a <pre>, reset it's formatting to blend in */
+  background: inherit !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+code pre {
+  /* When <pre> is in a <code>, reset it's formatting to blend in */
+  display: inline;
+  background: inherit !important;
+  font-size: inherit !important;
+  color: inherit !important;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Details */
+details {
+  /* Make the <details> look more "clickable" */
+  padding: 0.6rem 1rem;
+  background: var(--ptm-color-bg-2);
+  border: 1px solid var(--ptm-color-border);
+  border-radius: 4px;
+}
+
+summary {
+  /* Makes the <summary> look more like a "clickable" link with the pointer cursor */
+  cursor: pointer;
+  font-weight: bold;
+}
+
+details[open] {
+  /* Adjust the <details> padding while open */
+  padding-bottom: 0.75rem;
+}
+
+details[open] summary {
+  /* Adjust the <details> padding while open */
+  margin-bottom: 6px;
+}
+
+details[open] > *:last-child {
+  /* Resets the bottom margin of the last element in the <details> while <details> is opened. This prevents double margins/paddings. */
+  margin-bottom: 0;
+}
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid var(--ptm-color-border);
+}
+tr {
+  border-bottom: 1px solid #ddd;
+}
+tr:nth-child(even) {
+  background-color: var(--ptm-color-bg-2);
+}
+tr:nth-child(odd) {
+  background-color: var(--ptm-color-bg);
+}
+tbody tr:hover {
+  background-color: var(--ptm-color-border);
+}
+td,
+th {
+  padding: 8px 8px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: top;
+}
+th:first-child,
+td:first-child {
+  padding-left: 16px;
+}
+/* UL */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--ptm-color-border);
+}
+ul li:last-child {
+  border-bottom: none;
+}
+/* Button */
+button {
+  background-color: var(--ptm-color-bg-3);
+  color: var(--ptm-color-text-2);
+  padding: 6px 14px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: var(--ptm-font-one);
+}
+button:hover {
+  background-color: var(--ptm-color-bg-2);
+  color: var(--ptm-color-anchor-hover);
+}
+
+/* ========================================  Scopes =========================================*/
 @scope (.topBtn) {
   :scope {
     all: unset;
@@ -186,13 +414,56 @@ a[href^="#"] {
   :scope:hover {
     color: var(--ptm-color-anchor-hover);
     cursor: pointer;
+    box-shadow: none;
   }
 }
-
-/* @media */
+@scope (.themeBtn) {
+  :scope {
+    border: none;
+    background-color: inherit !important;
+    color: currentColor;
+    cursor: pointer;
+    float: right;
+    margin-left: 18px;
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  :scope:before {
+    font-family: var(--ptm-font-tabler);
+    line-height: 1;
+    content: "\eb30";
+  }
+  :scope:hover {
+    color: var(--ptm-color-anchor-hover);
+    box-shadow: none;
+  }
+}
+@scope (.container) {
+  :scope {
+    padding: 0.01em 16px;
+  }
+  :scope::after,
+  :scope::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+/* ----------------------------------------  @media --------------------------------------------------- */
 @media screen and (max-width: 640px) {
   header nav {
     flex-direction: column;
-    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    padding-top: 7px;
+  }
+  header nav a.logo {
+    font-size: 20px;
+  }
+  header nav div a {
+    font-size: 15px;
+  }
+  p {
+    font-size: 15px;
   }
 }
